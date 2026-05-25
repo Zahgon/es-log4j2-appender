@@ -23,7 +23,6 @@ import org.apache.logging.log4j.core.config.plugins.PluginBuilderFactory;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.Required;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.ValidHost;
 import org.apache.logging.log4j.core.config.plugins.validation.constraints.ValidPort;
-
 import java.net.InetAddress;
 
 /**
@@ -42,12 +41,12 @@ public class HttpAddress {
     }
 
     public HttpHost getHttpHost() {
-        return httpHost;
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     @PluginBuilderFactory
     public static Builder newBuilder() {
-        return new Builder();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
 
     public static class Builder implements org.apache.logging.log4j.core.util.Builder<HttpAddress> {
@@ -65,29 +64,25 @@ public class HttpAddress {
         private int port = 9200;
 
         public Builder withScheme(final String scheme) {
-            this.scheme = scheme;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public Builder withHost(final InetAddress host) {
-            this.host = host;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         public Builder withPort(final int port) {
-            this.port = port;
-            return this;
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
 
         @Override
         public HttpAddress build() {
-            return new HttpAddress(host, port, scheme);
+            throw new UnsupportedOperationException("STUB: not implemented");
         }
     }
 
     @Override
     public String toString() {
-        return httpHost.toString();
+        throw new UnsupportedOperationException("STUB: not implemented");
     }
-
 }

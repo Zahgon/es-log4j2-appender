@@ -6,28 +6,23 @@ import org.apache.http.entity.ContentType;
 import org.apache.http.nio.entity.NStringEntity;
 import org.elasticsearch.client.Response;
 import org.elasticsearch.client.RestClient;
-
 import java.io.IOException;
 import java.util.Collections;
 
 public class ElasticBulkSender implements BulkSender {
 
-	private static final String ES_BULK_METHOD = "POST";
-	private static final String ES_BULK_ENDPOINT = "_bulk";
+    private static final String ES_BULK_METHOD = "POST";
 
-	private final RestClient restClient;
+    private static final String ES_BULK_ENDPOINT = "_bulk";
 
-	ElasticBulkSender(RestClient restClient) {
-		this.restClient = restClient;
-	}
+    private final RestClient restClient;
 
-	@Override
-	public void send(String body) throws IOException {
-		HttpEntity entity = new NStringEntity(body, ContentType.APPLICATION_JSON);
-		Response response = this.restClient.performRequest(ES_BULK_METHOD, ES_BULK_ENDPOINT, Collections.emptyMap(), entity);
-		if (response.getStatusLine().getStatusCode() >= 300) {
-			throw new HttpResponseException(response.getStatusLine().getStatusCode(), response.getStatusLine().getReasonPhrase());
-		}
-	}
+    ElasticBulkSender(RestClient restClient) {
+        this.restClient = restClient;
+    }
 
+    @Override
+    public void send(String body) throws IOException {
+        throw new UnsupportedOperationException("STUB: not implemented");
+    }
 }

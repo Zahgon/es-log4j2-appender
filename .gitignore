@@ -76,3 +76,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+.aider*
+logs/
+.commit0_scripts/
+.github/workflows/
